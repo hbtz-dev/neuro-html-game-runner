@@ -3,8 +3,8 @@
 :: Please choose the correct distribution for your OS and architecture.
 set "swsUrl=https://github.com/static-web-server/static-web-server/releases/download/v2.34.0/static-web-server-v2.34.0-x86_64-pc-windows-msvc.zip"
 
-set "releaseUrl=https://github.com/hbtz-dev/neuro-html-game-runner/archive/refs/tags/1.0.0.zip"
-set "releaseDir=neuro-html-game-runner-1.0.0"
+set "releaseUrl=https://github.com/hbtz-dev/neuro-html-game-runner/archive/refs/tags/1.0.1.zip"
+set "releaseDir=neuro-html-game-runner-1.0.1"
 
 :: Check if the release folder exists
 if not exist "%~dp0\%releaseDir%" (
