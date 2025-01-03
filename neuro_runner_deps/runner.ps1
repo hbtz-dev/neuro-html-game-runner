@@ -6,7 +6,7 @@ param(
     [string]$port = "8787"
 )
 
-[Environment]::SetEnvironmentVariable("NEURO_SDK_WS_URL", "localhost:8000", 'Process')
+# [Environment]::SetEnvironmentVariable("NEURO_SDK_WS_URL", "localhost:8000", 'Process')
 
 $outputZip = "static-web-server.zip"
 $outputDir = "neuro_runner_deps/static-web-server"
