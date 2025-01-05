@@ -2,38 +2,12 @@
 # Please choose the correct distribution for your OS and architecture.
 
 param(
-    [string]$swsUrl = "https://github.com/static-web-server/static-web-server/releases/download/v2.34.0/static-web-server-v2.34.0-x86_64-pc-windows-msvc.zip",
     [string]$port = "8787"
 )
 
 # [Environment]::SetEnvironmentVariable("NEURO_SDK_WS_URL", "localhost:8000", 'Process')
 
-$outputZip = "static-web-server.zip"
-$outputDir = "neuro_runner_deps/static-web-server"
-$zipDirName = $swsUrl.Split('/')[-1].Replace('.zip', '')
-$exePath = "$outputDir\$zipDirName\static-web-server.exe"
-$publicDir = "."
-
-if (Test-Path $exePath) {
-
-} else {
-    # Create directory if it doesn't exist
-    New-Item -ItemType Directory -Force -Path $outputDir
-
-    # Download the file
-    Write-Host "Downloading Static Web Server..."
-    Invoke-WebRequest -Uri $swsUrl -OutFile $outputZip
-
-    # Extract the zip file
-    Write-Host "Extracting files..."
-    Expand-Archive -Path $outputZip -DestinationPath $outputDir -Force
-
-    # Clean up the zip file
-    Write-Host "Cleaning up..."
-    Remove-Item $outputZip
-
-    Write-Host "Done! Files extracted to $outputDir"
-}
+$exePath = "neuro_runner_deps\static-web-server.exe"
 
 # Function to display menu and handle selection
 function Show-Menu {
